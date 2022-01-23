@@ -5,8 +5,7 @@ dialect "java"
 
 rule "Hyderabad Rules"
    when
-      branch : Branch(branchName == "HYD")
+      branch : Branch(branchName == "HYD") 
    then
-     
       branch.setConcession("YES");
 end

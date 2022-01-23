@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pool.domine.Branch;
+import com.pool.modal.RULESESSIONS;
 
 @Component
 public class StudentpoolDroolsService {
@@ -14,6 +15,7 @@ public class StudentpoolDroolsService {
 
 	public Branch executeDroolsRules(Branch branch) {
 		KieSession kieSession = null;
+
 		try {
 			kieSession = kieContainer.newKieSession("dlsnrRuleVerificationSession");
 			kieSession.insert(branch);
