@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pool.domine.Branch;
+import com.pool.domine.Person;
 import com.pool.modal.RULESESSIONS;
 
 @Component
@@ -28,5 +29,21 @@ public class StudentpoolDroolsService {
 		}
 
 		return branch;
+	}
+
+	public Person executePersonDroolsService(Person person) {
+		KieSession kieSession = null;
+
+		try {
+			kieSession = kieContainer.newKieSession("personRuleVerificationSession");
+			kieSession.insert(person);
+			kieSession.fireAllRules();
+		} catch (Exception e) {
+		} finally {
+			if (kieSession != null) {
+				kieSession.dispose();
+			}
+		}
+		return person;
 	}
 }

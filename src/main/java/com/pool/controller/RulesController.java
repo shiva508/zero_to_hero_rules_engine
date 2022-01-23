@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pool.domine.Branch;
+import com.pool.domine.Person;
 import com.pool.service.StudentpoolDroolsService;
 
 @RestController
@@ -17,5 +18,10 @@ public class RulesController {
 	@PostMapping("executeReles")
 	public Branch executeRules(@RequestBody Branch branch) {
 		return studentpoolDroolsService.executeDroolsRules(branch);
+	}
+	
+	@PostMapping("/executepersonrule")
+	public Person executePersonRules(@RequestBody Person person) {
+		return studentpoolDroolsService.executePersonDroolsService(person);
 	}
 }

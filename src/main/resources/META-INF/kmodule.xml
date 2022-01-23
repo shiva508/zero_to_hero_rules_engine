@@ -10,4 +10,9 @@
 		packages="com.pool.hyd">
 		<ksession name="hydRuleVerificationSession"  />
 	</kbase>
+	
+	<kbase name="personRuleBase" 
+		packages="com.pool.person">
+		<ksession name="personRuleVerificationSession"  />
+	</kbase>
 </kmodule>
