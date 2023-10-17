@@ -7,8 +7,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class StudentpoolDroolsConfiguration {
-	@Bean
+	@Bean(name = "kieContainer")
 	public KieContainer kieContainer() {
+		return KieServices.Factory.get().getKieClasspathContainer();
+	}
+
+	@Bean(name = "dynamicKieContainer")
+	public KieContainer dynamicKieContainer() {
+
 		return KieServices.Factory.get().getKieClasspathContainer();
 	}
 }

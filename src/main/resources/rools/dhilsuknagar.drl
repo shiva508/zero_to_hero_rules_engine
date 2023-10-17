@@ -1,0 +1,11 @@
+package com.pool.dlsnr;
+
+import com.pool.domine.Branch;
+dialect "java"
+
+rule "Hyderabad Rules"
+   when
+      branch : Branch(branchName == "HYD") 
+   then
+      branch.setConcession("YES");
+end

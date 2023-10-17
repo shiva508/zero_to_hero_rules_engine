@@ -1,0 +1,22 @@
+template header
+ruleTitle
+rule
+propertyName
+ruleModelName
+condition
+value
+
+package org.pool;
+
+global com.pool.domine.RuleResult ruleResult;
+
+template "alert"
+
+rule "@{ruleTitle}"
+when
+    @{ruleModelName}(@{propertyName} @{condition} "@{value}")
+then
+    ruleResult.setOutPut("YES");
+end
+
+end template
