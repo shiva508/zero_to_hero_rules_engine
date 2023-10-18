@@ -1,4 +1,4 @@
-package com.pool.service;
+package com.pool.service.rule;
 
 import com.pool.domine.RuleModel;
 import com.pool.entity.RuleEntity;

@@ -1,10 +1,11 @@
-package com.pool.service;
+package com.pool.service.drool;
 
 import com.pool.configuration.DroolConfiguration;
 import com.pool.domine.Branch;
 import com.pool.domine.RuleModel;
 import com.pool.domine.RuleResult;
 import com.pool.repository.RuleRepository;
+import com.pool.service.rule.RuleService;
 import lombok.extern.slf4j.Slf4j;
 import org.drools.template.ObjectDataCompiler;
 import org.kie.api.builder.Message;

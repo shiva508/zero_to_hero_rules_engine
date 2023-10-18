@@ -1,4 +1,4 @@
-package com.pool.service;
+package com.pool.service.condition;
 
 import com.pool.domine.ConditionModel;
 import com.pool.domine.RuleModel;

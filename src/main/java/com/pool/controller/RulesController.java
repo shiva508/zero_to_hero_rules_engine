@@ -3,7 +3,7 @@ package com.pool.controller;
 import com.pool.domine.RuleModel;
 import com.pool.domine.RuleResult;
 import com.pool.entity.RuleEntity;
-import com.pool.service.RuleService;
+import com.pool.service.rule.RuleService;
 import org.drools.template.ObjectDataCompiler;
 import org.kie.api.builder.Message;
 import org.kie.api.builder.Results;
@@ -20,7 +20,6 @@ import com.pool.service.StudentpoolDroolsService;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
