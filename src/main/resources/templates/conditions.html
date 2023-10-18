@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/rules.css}"/>
+</head>
+<body>
+<div th:replace="~{header :: header}">
+</div>
+<main role="main" class="container">
+    <h1 th:text="${addCondition}"></h1>
+    <div class="condition-container">
+        <div class="mb-3">
+            <input class="form-control form-control-lg input-width" type="text" placeholder="Rule Title" aria-label=".form-control-lg example">
+            <input class="form-control form-control-lg input-width" type="text" placeholder="Property Name" aria-label=".form-control-lg example">
+            <input class="form-control form-control-lg input-width" type="text" placeholder="Condition" aria-label=".form-control-lg example">
+        </div>
+    </div>
+</main>
+<!-- /.container -->
+<script type="text/javascript" th:src="@{webjars/bootstrap/5.3.2/js/bootstrap.min.js}"></script>
+</body>
+</html>

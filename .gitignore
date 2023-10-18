@@ -31,3 +31,27 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+# dependencies
+/comrade-rule-ui/node_modules
+/comrade-rule-ui/.pnp
+/comrade-rule-ui/.pnp.js
+
+# testing
+/comrade-rule-ui/coverage
+
+# production
+/comrade-rule-ui/build
+/comrade-rule-ui/package-lock.json
+
+# misc
+/comrade-rule-ui/.DS_Store
+/comrade-rule-ui/.env.local
+/comrade-rule-ui/.env.development.local
+/comrade-rule-ui/.env.test.local
+/comrade-rule-ui/.env.production.local
+
+/comrade-rule-ui/npm-debug.log*
+/comrade-rule-ui/yarn-debug.log*
+/comrade-rule-ui/yarn-error.log*

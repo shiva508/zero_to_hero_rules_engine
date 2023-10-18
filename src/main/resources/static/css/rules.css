@@ -1,0 +1,26 @@
+
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.condition-container {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 12px;
+}
+.input-width{
+    width: 388px;
+    margin-bottom: 18px;
+}
+h1{
+	color:#0000FF;
+	font-weight: bold;
+}
+
+h2{
+	color:#FF0000;
+}

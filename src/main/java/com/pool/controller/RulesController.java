@@ -2,6 +2,8 @@ package com.pool.controller;
 
 import com.pool.domine.RuleModel;
 import com.pool.domine.RuleResult;
+import com.pool.entity.RuleEntity;
+import com.pool.service.RuleService;
 import org.drools.template.ObjectDataCompiler;
 import org.kie.api.builder.Message;
 import org.kie.api.builder.Results;
@@ -10,10 +12,7 @@ import org.kie.api.runtime.KieSession;
 import org.kie.internal.io.ResourceFactory;
 import org.kie.internal.utils.KieHelper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.pool.domine.Branch;
 import com.pool.domine.Person;
@@ -25,14 +24,39 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/rule")
 public class RulesController {
+
+	@Autowired
+	private RuleService ruleService;
 
 	@Autowired
 	private StudentpoolDroolsService studentpoolDroolsService;
 
+
+	@PostMapping("/save")
+	public RuleEntity save(@RequestBody RuleModel ruleModel){
+		return ruleService.save(ruleModel);
+	}
+
+	@PutMapping("/update")
+	public RuleEntity update(@RequestBody RuleModel ruleModel){
+		return ruleService.update(ruleModel);
+	}
+
+	@DeleteMapping("/delete")
+	public RuleEntity delete(RuleModel ruleModel){
+		return ruleService.delete(ruleModel);
+	}
+
+	@GetMapping("/all")
+	public List<RuleEntity> getAll(){
+		return ruleService.getAll();
+	}
+
+
 	@PostMapping("executeReles")
 	public Branch executeRules(@RequestBody Branch branch) {
-
 		return studentpoolDroolsService.executeDroolsRules(branch);
 	}
 	
@@ -44,7 +68,6 @@ public class RulesController {
 	@GetMapping("/dadaddad")
 	public String getDrlFile(){
 		var data = ResourceFactory.newClassPathResource("rools/dhilsuknagar.drl");
-
 		try {
 		var out = data.getInputStream().readAllBytes();
 		} catch (IOException e) {

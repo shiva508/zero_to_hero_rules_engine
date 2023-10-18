@@ -1,5 +1,6 @@
 package com.pool.domine;
 
+import com.pool.entity.RuleEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class RuleModel implements Serializable {
     private String value;
     private String ruleModelName;
 
+
     public RuleModel(String ruleTitle, String propertyName, String condition, String value, String ruleModelName) {
         this.ruleTitle = ruleTitle;
         this.propertyName = propertyName;
@@ -27,4 +29,11 @@ public class RuleModel implements Serializable {
         this.ruleModelName = ruleModelName;
     }
 
+    public RuleModel(RuleEntity ruleEntity){
+        this.ruleTitle = ruleEntity.getRuleTitle();
+        this.propertyName = ruleEntity.getPropertyName();
+        this.condition = ruleEntity.getCondition();
+        this.value = ruleEntity.getValue();
+        this.ruleModelName = ruleEntity.getRuleModelName();
+    }
 }
